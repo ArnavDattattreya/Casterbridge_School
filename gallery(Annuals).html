@@ -1,0 +1,1747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery Page</title>
+    <link rel="stylesheet" href="gallery.css">
+    <link rel="stylesheet" href="gallery1.css">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- BaguetteBox CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/baguettebox.js@1.8.1/dist/baguetteBox.min.css">
+    <!-- Custom Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Droid+Sans:wght@400;700&display=swap" rel="stylesheet">
+<!-- Favicon -->
+<link href="img/favicon.ico" rel="icon">
+
+<!-- Google Web Fonts -->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Handlee&family=Nunito&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+<!-- Flaticon Font -->
+<link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
+
+<!-- Libraries Stylesheet -->
+<link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+<link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+<!-- Customized Bootstrap Stylesheet -->
+<link href="css/style.css" rel="stylesheet">
+
+    <style>
+    .gallery-container h1 {
+        text-align: center;
+        margin-top: 50px;
+        font-family: 'Droid Sans', sans-serif;
+        font-weight: bold;
+        position: relative;
+        display: inline-block;
+    }
+
+    /* Underline Animation with Keyframes */
+    .gallery-container h1::after {
+        content: '';
+        position: absolute;
+        bottom: -10px; /* Space between the text and the underline */
+        left: 0;
+        height: 2px;
+        background-color: #3498db; /* Underline color */
+        animation: underlineAnimation 2s infinite; /* Infinite animation */
+    }
+
+    @keyframes underlineAnimation {
+        0% {
+            width: 0;
+            left: 0;
+        }
+        50% {
+            width: 100%;
+            left: 0;
+        }
+        100% {
+            width: 0;
+            left: 100%;
+        }
+    }
+
+
+        .container.gallery-container {
+            background-color: #fff;
+            color: #35373a;
+            min-height: 100vh;
+            padding: 30px 50px;
+        }
+
+        .gallery-container h1 {
+            text-align: center;
+            margin-top: 50px;
+            font-family: 'Droid Sans', sans-serif;
+            font-weight: bold;
+        }
+
+        .gallery-container p.page-description {
+            text-align: center;
+            margin: 25px auto;
+            font-size: 18px;
+            color: #999;
+        }
+
+        .tz-gallery {
+            padding: 0px;
+        }
+
+        .tz-gallery .row > div {
+            padding: 2px; /* Override Bootstrap column padding */
+        }
+
+        .tz-gallery .lightbox img {
+            width: 100%;
+            border-radius: 0;
+        }
+
+        .tz-gallery .lightbox:hover img {
+            filter: brightness(70%);
+            transition: filter 0.4s;
+        }
+
+        .baguetteBox-button {
+            background-color: transparent !important;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <!-- Logo and School Name -->
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="school logo.jpg" alt="School Logo" width="50" height="50" class="me-2">
+                <span>Casterbridge School</span>
+            </a>
+            
+            <!-- Toggler for mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Navbar Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="Index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Feedback.html">Feedback</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+  
+    <!-- Hero Section -->
+    <section class="hero-video">
+      <div class="video-container">
+          <video src="zero.mp4" autoplay loop playsinline muted></video>
+          <div class="callout">
+              <h1 style="color: #000;">Photos &amp; <br>Gallery</h1>
+              <a class="btn btn-primary mt-3" href="#">LEARN MORE</a>
+          </div>
+      </div>
+  </section>
+  <style>
+    /* Hero Video */
+.outter.hero-video{
+    width:100%;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    @media (max-width: 767px) {
+      height: 325px;
+    }
+  }
+  
+  .hero-video {
+    
+  .video-container {
+    height: 550px;
+    width:100%;
+    position: relative;
+    overflow: hidden;
+    @media (max-width: 767px) {
+      height: 325px;
+    }
+  }
+  
+  video {
+    object-fit: cover; 
+    position: absolute;
+    height: 550px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    @media (max-width: 767px) {
+      height: 325px;
+    }
+  }
+  
+  .video-container:after {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(black, .2);
+    z-index: 1;
+  }
+  
+  h1 {
+    text-transform: uppercase;
+    margin: 0 0 1rem;
+    padding: 0;
+    line-height: 1;
+    color: white;
+    @media (max-width: 767px) {
+      font-size: 32px;
+    }
+    @media (min-width: 768px) {
+      font-size: 52px;
+    }
+  }
+  
+  .desc{
+    color: white;
+    font-weight:400;
+    font-size:18px;
+  }
+  
+  .callout {
+    position: relative;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    width: 70%;
+    margin:auto;
+    @media (max-width: 767px) {
+      width: 90%;
+    }
+  }
+  
+  .button {
+    text-transform:uppercase;
+    background-color:transparent;
+    border-radius:0px;
+    margin-top:20px;
+    background-color:#82bb00;
+    padding:15px 30px;
+    border-radius:0px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    @media (max-width: 767px) {
+      padding: 10px 20px;
+    }
+    }
+    .button:hover {
+      cursor: pointer;
+      background-color: #6e9e01;
+    }
+  }
+
+
+  .btn {
+  border: 2px solid black;
+  background-color: white;
+  color: black;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Green */
+.success {
+  border-color: #04AA6D;
+  color: green;
+}
+
+.success:hover {
+  background-color: #04AA6D;
+  color: white;
+}
+
+/* Blue */
+.info {
+  border-color: #2196F3;
+  color: dodgerblue
+}
+
+.info:hover {
+  background: #2196F3;
+  color: white;
+}
+
+/* Orange */
+.warning {
+  border-color: #ff9800;
+  color: orange;
+}
+
+.warning:hover {
+  background: #ff9800;
+  color: white;
+}
+
+/* Red */
+.danger {
+  border-color: #f44336;
+  color: red
+}
+
+.danger:hover {
+  background: #f44336;
+  color: white;
+}
+
+
+  </style>
+
+
+    <div class="container gallery-container">
+        <h1>Photos & Gallery</h1>
+        <p class="page-description text-center">Casterbridge Album</p>
+
+        <div>
+            <a href="gallery.html"><button class="btn success">All</button></a>
+           <a href="gallery(Annuals).html"> <button class="btn info" >Annuals</button></a>
+            <a href="gallery(Sports).html"><button class="btn warning">Sports</button></a>
+            <a href="gallery(Trips).html"><button class="btn danger">Trips</button></a>
+            <a href="gallery(Others).html"><button class="btn Gray">Others</button></a>
+        </div>
+        <br><br>
+        
+        <div class="tz-gallery">
+            <div class="row">
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="1.JPG">
+                        <img src="1.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="2.JPG">
+                        <img src="2.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="3.JPG">
+                        <img src="3.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="4.JPG" >
+                        <img src="4.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="5.JPG" >
+                        <img src="5.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="6.JPG" >
+                        <img src="6.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="7.JPG">
+                        <img src="7.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="8.JPG">
+                        <img src="8.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="9.JPG">
+                        <img src="9.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="10.JPG" >
+                        <img src="10.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="11.JPG">
+                        <img src="11.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="12.JPG">
+                        <img src="12.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="13.JPG">
+                        <img src="13.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="14.JPG">
+                        <img src="14.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="15.JPG" >
+                        <img src="15.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="16.JPG">
+                        <img src="16.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="17.JPG">
+                        <img src="17.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="18.JPG">
+                        <img src="18.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="19.JPG">
+                        <img src="19.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="20.JPG" >
+                        <img src="20.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="21.JPG">
+                        <img src="21.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="22.JPG">
+                        <img src="22.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="23.JPG">
+                        <img src="23.JPG" alt="Bridge">
+                    </a>
+                </div>
+
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="24.JPG">
+                        <img src="24.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="25.JPG">
+                        <img src="25.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="26.JPG">
+                        <img src="26.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="27.JPG" >
+                        <img src="27.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="28.JPG" >
+                        <img src="28.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="29.JPG" >
+                        <img src="29.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="30.JPG" >
+                        <img src="30.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="31.JPG" >
+                        <img src="31.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="32.JPG">
+                        <img src="32.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="33.JPG">
+                        <img src="33.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="34.JPG" >
+                        <img src="34.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="35.JPG">
+                        <img src="35.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="36.JPG">
+                        <img src="36.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="37.JPG">
+                        <img src="37.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="38.JPG">
+                        <img src="38.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="39.JPG">
+                        <img src="39.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="40.JPG">
+                        <img src="40.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="41.JPG" >
+                        <img src="41.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="42.JPG">
+                        <img src="42.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="43.JPG" >
+                        <img src="43.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="44.JPG">
+                        <img src="44.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="45.JPG">
+                        <img src="45.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="46.JPG">
+                        <img src="46.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="47.JPG" >
+                        <img src="47.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="48.JPG">
+                        <img src="48.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="49.JPG">
+                        <img src="49.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="50.JPG">
+                        <img src="50.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="51.JPG">
+                        <img src="51.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="52.JPG">
+                        <img src="52.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="53.JPG">
+                        <img src="53.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="54.JPG">
+                        <img src="54.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="55.JPG" >
+                        <img src="55.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="56.JPG">
+                        <img src="56.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="57.JPG">
+                        <img src="57.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="58.JPG">
+                        <img src="58.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="59.JPG" >
+                        <img src="59.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="60.JPG">
+                        <img src="60.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="61.JPG">
+                        <img src="61.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="62.JPG">
+                        <img src="62.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="63.JPG">
+                        <img src="63.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="64.JPG" >
+                        <img src="64.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="65.JPG" >
+                        <img src="65.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="66.JPG">
+                        <img src="66.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="67.JPG" >
+                        <img src="67.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="68.JPG" >
+                        <img src="68.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="69.JPG">
+                        <img src="69.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="70.JPG" >
+                        <img src="70.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="71.JPG" >
+                        <img src="71.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="72.JPG">
+                        <img src="72.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox"href="73.JPG" >
+                        <img src="73.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="74.JPG">
+                        <img src="74.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="75.JPG">
+                        <img src="75.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox"href="76.JPG" >
+                        <img src="76.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox"href="77.JPG" >
+                        <img src="77.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox"href="78.JPG" >
+                        <img src="78.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox"href="79.JPG" >
+                        <img src="79.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox"href="80.JPG" >
+                        <img src="80.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox"href="81.JPG" >
+                        <img src="81.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="82.JPG">
+                        <img src="82.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox"href="83.JPG" >
+                        <img src="83.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox"href="84.JPG" >
+                        <img src="84.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="85.JPG">
+                        <img src="85.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox"href="86.JPG" >
+                        <img src="86.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox"href="87.JPG" >
+                        <img src="87.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="88.JPG">
+                        <img src="88.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox"href="89.JPG" >
+                        <img src="89.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox"href="90.JPG" >
+                        <img src="90.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox"href="91.JPG" >
+                        <img src="91.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox"href="92.JPG" >
+                        <img src="92.JPG" alt="Bridge">
+                    </a>
+                </div>  
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox"href="94.JPG" >
+                        <img src="94.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox"href="95.JPG" >
+                        <img src="95.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox"href="96.JPG" >
+                        <img src="96.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="97.JPG">
+                        <img src="97.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="98.JPG" >
+                        <img src="98.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox"href="99.JPG" >
+                        <img src="99.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox"href="100.JPG" >
+                        <img src="100.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox"href="101.JPG" >
+                        <img src="101.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="102.JPG">
+                        <img src="102.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="103.JPG" >
+                        <img src="103.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="104.JPG">
+                        <img src="104.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox"  href="105.JPG">
+                        <img src="105.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox"  href="106.JPG">
+                        <img src="106.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox"  href="107.JPG">
+                        <img src="107.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox"  href="108.JPG">
+                        <img src="108.JPG" alt="Bridge">
+                    </a>
+                </div>
+                
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox"  href="109.JPG">
+                        <a class="lightbox" >
+                        <img src="109.JPG" alt="Bridge">
+                    </a>
+                </div> 
+                
+                
+                
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="110.JPG">
+                        <img src="110.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="111.JPG">
+                        <img src="111.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="112.JPG">
+                        <img src="112.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="113.JPG">
+                        <img src="113.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="114.JPG">
+                        <img src="114.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="115.JPG">
+                        <img src="115.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="116.JPG">
+                        <img src="116.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="117.JPG">
+                        <img src="117.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="118.JPG">
+                        <img src="118.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="119.JPG">
+                        <img src="119.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="120.JPG">
+                        <img src="120.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="121.JPG">
+                        <img src="121.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="122.JPG">
+                        <img src="122.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="123.JPG">
+                        <img src="123.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="124.JPG">
+                        <img src="124.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="125.JPG">
+                        <img src="125.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="126.JPG">
+                        <img src="126.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox"href="127.JPG" >
+                        <img src="127.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="128.JPG">
+                        <img src="128.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="129.JPG">
+                        <img src="129.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="130.JPG">
+                        <img src="130.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="131.JPG">
+                        <img src="131.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="132.JPG">
+                        <img src="132.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="133.JPG">
+                        <img src="133.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="134.JPG">
+                        <img src="134.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="135.JPG">
+                        <img src="135.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="136.JPG" >
+                        <img src="136.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="137.JPG">
+                        <img src="137.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="138.JPG">
+                        <img src="138.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="139.JPG">
+                        <img src="139.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="140.JPG">
+                        <img src="140.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="141.JPG">
+                        <img src="141.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="142.JPG" >
+                        <img src="142.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="143.JPG">
+                        <img src="143.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="144.JPG">
+                        <img src="144.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="145.JPG" >
+                        <img src="145.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="146.JPG">
+                        <img src="146.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="147.JPG">
+                        <img src="147.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="148.JPG">
+                        <img src="148.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="149.JPG" >
+                        <img src="149.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="150.JPG" >
+                        <img src="150.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="151.JPG">
+                        <img src="151.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="152.JPG" >
+                        <img src="152.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="153.JPG">
+                        <img src="153.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="154.JPG">
+                        <img src="154.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="155.JPG" >
+                        <img src="155.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="156.JPG">
+                        <img src="156.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox"href="157.JPG" >
+                        <img src="157.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="158.JPG">
+                        <img src="158.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="159.JPG">
+                        <img src="159.JPG" alt="Bridge">
+                    </a>
+                </div>      <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="160.JPG">
+                        <img src="160.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="161.JPG">
+                        <img src="161.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="162.JPG">
+                        <img src="162.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="163.JPG" >
+                        <img src="163.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox"href="164.JPG" >
+                        <img src="164.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="165.JPG">
+                        <img src="165.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="166.JPG">
+                        <img src="166.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="167.JPG">
+                        <img src="167.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="168.JPG">
+                        <img src="168.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="169.JPG">
+                        <img src="169.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="170.JPG">
+                        <img src="170.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="171.JPG" >
+                        <img src="171.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="172.JPG">
+                        <img src="172.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="173.JPG">
+                        <img src="173.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="174.JPG">
+                        <img src="174.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="175.JPG">
+                        <img src="175.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="176.JPG">
+                        <img src="176.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="177.JPG">
+                        <img src="177.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="178.JPG">
+                        <img src="178.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="179.JPG">
+                        <img src="179.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="180.JPG">
+                        <img src="180.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="181.JPG">
+                        <img src="181.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="182.JPG">
+                        <img src="182.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="183.JPG">
+                        <img src="183.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="184.JPG">
+                        <img src="184.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="185.JPG">
+                        <img src="185.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="186.JPG">
+                        <img src="186.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="187.JPG">
+                        <img src="187.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="188.JPG">
+                        <img src="188.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="189.JPG" >
+                        <img src="189.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="190.JPG" >
+                        <img src="190.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="191.JPG" >
+                        <img src="191.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="192.JPG">
+                        <img src="192.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="193.JPG">
+                        <img src="193.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="194.JPG">
+                        <img src="194.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="195.JPG">
+                        <img src="195.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="196.JPG">
+                        <img src="196.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="197.JPG">
+                        <img src="197.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="198.JPG">
+                        <img src="198.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="199.JPG">
+                        <img src="199.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="200.JPG">
+                        <img src="200.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="201.JPG">
+                        <img src="201.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="202.JPG">
+                        <img src="202.JPG" alt="Bridge">
+                    </a>
+                </div> <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="203.JPG" >
+                        <img src="203.JPG" alt="Bridge">
+                    </a>
+                </div> <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="204.JPG">
+                        <img src="204.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="205.JPG">
+                        <img src="205.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="206.JPG">
+                        <img src="206.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="207.JPG">
+                        <img src="207.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="208.JPG">
+                        <img src="208.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="209.JPG">
+                        <img src="209.JPG" alt="Bridge">
+                    </a>
+                </div>
+
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="210.JPG">
+                        <img src="210.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="211.JPG">
+                        <img src="211.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="212.JPG">
+                        <img src="212.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="213.JPG">
+                        <img src="213.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="214.JPG" >
+                        <img src="214.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="215.JPG" >
+                        <img src="215.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="216.JPG">
+                        <img src="216.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="217.JPG">
+                        <img src="217.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="218.JPG">
+                        <img src="218.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="219.JPG">
+                        <img src="219.JPG" alt="Bridge">
+                    </a>
+                </div> <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="220.JPG">
+                        <img src="220.JPG" alt="Bridge">
+                    </a>
+                </div> <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="221.JPG">
+                        <img src="221.JPG" alt="Bridge">
+                    </a>
+                </div> <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="222.JPG">
+                        <img src="222.JPG" alt="Bridge">
+                    </a>
+                </div> <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="223.JPG">
+                        <img src="223.JPG" alt="Bridge">
+                    </a>
+                </div> <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="224.JPG">
+                        <img src="224.JPG" alt="Bridge">
+                    </a>
+                </div> <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="225.JPG">
+                        <img src="225.JPG" alt="Bridge">
+                    </a>
+                </div> <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="226.JPG">
+                        <img src="226.JPG" alt="Bridge">
+                    </a>
+                </div> <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="227.JPG">
+                        <img src="227.JPG" alt="Bridge">
+                    </a>
+                </div> <div class="col-sm-12 col-md-4">
+                    <a class="lightbox"href="228.JPG" >
+                        <img src="228.JPG" alt="Bridge">
+                    </a>
+                </div> <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="229.JPG">
+                        <img src="229.JPG" alt="Bridge">
+                    </a>
+                </div> <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="230.JPG">
+                        <img src="230.JPG" alt="Bridge">
+                    </a>
+                </div> <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="231.JPG">
+                        <img src="231.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="232.JPG">
+                        <img src="232.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="233.JPG">
+                        <img src="233.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="234.JPG" >
+                        <img src="234.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="235.JPG">
+                        <img src="235.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="236.JPG">
+                        <img src="236.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox"href="237.JPG" >
+                        <img src="237.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="238.JPG">
+                        <img src="238.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="239.JPG">
+                        <img src="239.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="240.JPG" >
+                        <img src="240.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="241.JPG" >
+                        <img src="241.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="242.JPG" >
+                        <img src="242.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="243.JPG">
+                        <img src="243.JPG" alt="Bridge">
+                    </a>
+                </div>
+
+
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="244.JPG" >
+                        <img src="244.JPG" alt="Bridge">
+                    </a>
+                </div>
+
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="245.JPG">
+                        <img src="245.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="246.JPG">
+                        <img src="246.JPG" alt="Bridge">
+                    </a>
+                </div>
+
+
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="247.JPG">
+                        <img src="247.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="248.JPG">
+                        <img src="248.JPG" alt="Bridge">
+                    </a>
+                </div>
+
+
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="249.JPG">
+                        <img src="249.JPG" alt="Bridge">
+                    </a>
+                </div>
+
+
+
+
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="250.JPG">
+                        <img src="250.JPG" alt="Bridge">
+                    </a>
+                </div>
+
+
+
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="251.JPG">
+                        <img src="251.JPG" alt="Bridge">
+                    </a>
+                </div>
+
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="252.JPG">
+                        <img src="252.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="253.JPG">
+                        <img src="253.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="254.JPG">
+                        <img src="254.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="255.JPG">
+                        <img src="255.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="256.JPG">
+                        <img src="256.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="257.JPG">
+                        <img src="257.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="258.JPG">
+                        <img src="258.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="259.JPG">
+                        <img src="259.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="260.JPG" >
+                        <img src="260.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="261.JPG" >
+                        <img src="261.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="262.JPG">
+                        <img src="262.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="263.JPG">
+                        <img src="263.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="264.JPG" >
+                        <img src="264.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="265.JPG">
+                        <img src="265.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="266.JPG">
+                        <img src="266.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="267.JPG">
+                        <img src="267.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="268.JPG">
+                        <img src="268.JPG" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="269.JPG">
+                        <img src="269.JPG" alt="Bridge">
+                    </a>
+                </div>
+
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="270.JPG">
+                        <img src="270.JPG" alt="Bridge">
+                    </a>
+                </div>
+
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="271.JPG">
+                        <img src="271.JPG" alt="Bridge">
+                    </a>
+                </div>
+            
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr style= "border-radius: 2%;">
+
+
+    <style>
+        body {
+      background: rgb(0, 0, 0);
+        background:
+            radial-gradient(circle, rgba(255, 255, 255, .3), transparent)
+        ,	linear-gradient(rgba(255, 255, 255, .5) 1px, transparent 1px)
+        ,	linear-gradient(90deg, rgba(255, 255, 255, .5) 1px, transparent 1px)
+        ,	linear-gradient(rgba(255, 255, 255, .3) 1px, transparent 1px)
+        ,	linear-gradient(90deg, rgba(255, 255, 255, .3) 1px, transparent 1px)
+        ,		rgb(0, 10, 15);
+          box-shadow:
+        inset 0 0 10em rgba(0, 0, 0, .5)
+          , 0 0 1em rgba(0, 0, 0, .8);
+      font-family: 'Abril Fatface', cursive;
+      font-weight: 700;
+      color: #000000;
+    }
+
+    /* Gray */
+.Gray {
+  border-color: rgb(157, 19, 104);
+  color:rgb(157, 19, 104)
+}
+
+.Gray:hover {
+  background: rgb(157, 19, 104);
+  color: white;
+}
+
+    </style>  
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- BaguetteBox JS -->
+    <script src="https://cdn.jsdelivr.net/npm/baguettebox.js@1.8.1/dist/baguetteBox.min.js"></script>
+    <script>
+        baguetteBox.run('.tz-gallery');
+    </script>
+
+<footer class="footer-section">
+    <div class="container">
+        <div class="footer-cta pt-5 pb-5">
+            <div class="row">
+                <div class="col-xl-4 col-md-4 mb-30">
+                    <div class="single-cta">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="cta-text">
+                            <h4>Find us</h4>
+                            <span>Chapra,Bihar Nehru chowk</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-4 mb-30">
+                    <div class="single-cta">
+                        <i class="fas fa-phone"></i>
+                        <div class="cta-text">
+                            <h4>Call us</h4>
+                            <span>8757483480</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-4 mb-30">
+                    <div class="single-cta">
+                        <i class="far fa-envelope-open"></i>
+                        <div class="cta-text">
+                            <h4>Mail us</h4>
+                            <span>casterbridge2016@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-content pt-5 pb-5">
+            <div class="row">
+                <div class="col-xl-4 col-lg-4 mb-50">
+                    <div class="footer-widget">
+                        <div class="footer-logo">
+                            <a href="index.html"><img src="school_logo-removebg-preview.png" class="img-fluid" alt="logo"></a>
+                        </div>
+                        <div class="footer-text">
+                            <p>Discover excellence at Casterbridge School, where innovative learning meets personalized attention. Empowering students to thrive academically and socially, we create future leaders in a nurturing and dynamic environment. Join us today!</p>
+                        </div>
+                        <div class="footer-social-icon">
+                            <span>Follow us</span>
+                            <a href="https://www.facebook.com/p/RSCasterbridge-School-100064154192801/"><i class="fab fa-facebook"></i></a>
+                            <a href="https://discord.com/channels/1333484419989897267/1333484420778295368"><i class='fab fa-discord' style='color: white'></i></a>
+                            <a href="https://www.youtube.com/@CasterbridgeSchool-Chapra"><i class="fab fa-youtube" style="color:red"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
+                    <div class="footer-widget">
+                        <div class="footer-widget-heading">
+                            <h3>Useful Links</h3>
+                        </div>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">about</a></li>
+                            <li><a href="#">services</a></li>
+                            <li><a href="#">portfolio</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">About us</a></li>
+                            <li><a href="#">Our Services</a></li>
+                            <li><a href="#">Expert Team</a></li>
+                            <li><a href="#">Contact us</a></li>
+                            <li><a href="#">Latest News</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
+                    <div class="footer-widget">
+                        <div class="footer-widget-heading">
+                            <h3>Subscribe</h3>
+                        </div>
+                        <div class="footer-text mb-25">
+                            <p>Don’t miss to subscribe to our new feeds, kindly fill the form below.</p>
+                        </div>
+                        <div class="subscribe-form">
+                            <form action="#">
+                                <input type="text" placeholder="Email Address">
+                                <button><i class="fab fa-telegram-plane"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 text-center text-lg-left">
+                    <div class="copyright-text">
+                        <p>Copyright &copy; 2025, All Right Reserved <a href="">Arnav-Dattattreya</a></p>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
+                    <div class="footer-menu">
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Terms</a></li>
+                            <li><a href="#">Privacy</a></li>
+                            <li><a href="#">Policy</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </footer>
+  
+<!--footer end-->  
+
+</body>
+</html>

@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery Page</title>
+    <link rel="stylesheet" href="gallery.css">
+    <link rel="stylesheet" href="gallery1.css">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- BaguetteBox CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/baguettebox.js@1.8.1/dist/baguetteBox.min.css">
+    <!-- Custom Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Droid+Sans:wght@400;700&display=swap" rel="stylesheet">
+<!-- Favicon -->
+<link href="img/favicon.ico" rel="icon">
+
+<!-- Google Web Fonts -->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Handlee&family=Nunito&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+<!-- Flaticon Font -->
+<link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
+
+<!-- Libraries Stylesheet -->
+<link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+<link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+<!-- Customized Bootstrap Stylesheet -->
+<link href="css/style.css" rel="stylesheet">
+
+    <style>
+    .gallery-container h1 {
+        text-align: center;
+        margin-top: 50px;
+        font-family: 'Droid Sans', sans-serif;
+        font-weight: bold;
+        position: relative;
+        display: inline-block;
+    }
+
+    /* Underline Animation with Keyframes */
+    .gallery-container h1::after {
+        content: '';
+        position: absolute;
+        bottom: -10px; /* Space between the text and the underline */
+        left: 0;
+        height: 2px;
+        background-color: #3498db; /* Underline color */
+        animation: underlineAnimation 2s infinite; /* Infinite animation */
+    }
+
+    @keyframes underlineAnimation {
+        0% {
+            width: 0;
+            left: 0;
+        }
+        50% {
+            width: 100%;
+            left: 0;
+        }
+        100% {
+            width: 0;
+            left: 100%;
+        }
+    }
+
+
+        .container.gallery-container {
+            background-color: #fff;
+            color: #35373a;
+            min-height: 100vh;
+            padding: 30px 50px;
+        }
+
+        .gallery-container h1 {
+            text-align: center;
+            margin-top: 50px;
+            font-family: 'Droid Sans', sans-serif;
+            font-weight: bold;
+        }
+
+        .gallery-container p.page-description {
+            text-align: center;
+            margin: 25px auto;
+            font-size: 18px;
+            color: #999;
+        }
+
+        .tz-gallery {
+            padding: 0px;
+        }
+
+        .tz-gallery .row > div {
+            padding: 2px; /* Override Bootstrap column padding */
+        }
+
+        .tz-gallery .lightbox img {
+            width: 100%;
+            border-radius: 0;
+        }
+
+        .tz-gallery .lightbox:hover img {
+            filter: brightness(70%);
+            transition: filter 0.4s;
+        }
+
+        .baguetteBox-button {
+            background-color: transparent !important;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <!-- Logo and School Name -->
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="school logo.jpg" alt="School Logo" width="50" height="50" class="me-2">
+                <span>Casterbridge School</span>
+            </a>
+            
+            <!-- Toggler for mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Navbar Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="Index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a class="nav-link" href="Feedback.html">Feedback</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <style>
+        body {
+      background: rgb(0, 0, 0);
+        background:
+            radial-gradient(circle, rgba(255, 255, 255, .3), transparent)
+        ,	linear-gradient(rgba(255, 255, 255, .5) 1px, transparent 1px)
+        ,	linear-gradient(90deg, rgba(255, 255, 255, .5) 1px, transparent 1px)
+        ,	linear-gradient(rgba(255, 255, 255, .3) 1px, transparent 1px)
+        ,	linear-gradient(90deg, rgba(255, 255, 255, .3) 1px, transparent 1px)
+        ,		rgb(0, 10, 15);
+          box-shadow:
+        inset 0 0 10em rgba(0, 0, 0, .5)
+          , 0 0 1em rgba(0, 0, 0, .8);
+      font-family: 'Abril Fatface', cursive;
+      font-weight: 700;
+      color: #000000;
+    }
+    </style>  
+  
+    <!-- Hero Section -->
+    <section class="hero-video">
+      <div class="video-container">
+          <video src="zero.mp4" autoplay loop playsinline muted></video>
+          <div class="callout">
+              <h1 style="color: #000;">Photos &amp; <br>Gallery</h1>
+              <a class="btn btn-primary mt-3" href="#">LEARN MORE</a>
+          </div>
+      </div>
+  </section>
+  <style>
+    /* Hero Video */
+.outter.hero-video{
+    width:100%;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    @media (max-width: 767px) {
+      height: 325px;
+    }
+  }
+  
+  .hero-video {
+    
+  .video-container {
+    height: 550px;
+    width:100%;
+    position: relative;
+    overflow: hidden;
+    @media (max-width: 767px) {
+      height: 325px;
+    }
+  }
+  
+  video {
+    object-fit: cover; 
+    position: absolute;
+    height: 550px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    @media (max-width: 767px) {
+      height: 325px;
+    }
+  }
+  
+  .video-container:after {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(black, .2);
+    z-index: 1;
+  }
+  
+  h1 {
+    text-transform: uppercase;
+    margin: 0 0 1rem;
+    padding: 0;
+    line-height: 1;
+    color: white;
+    @media (max-width: 767px) {
+      font-size: 32px;
+    }
+    @media (min-width: 768px) {
+      font-size: 52px;
+    }
+  }
+  
+  .desc{
+    color: white;
+    font-weight:400;
+    font-size:18px;
+  }
+  
+  .callout {
+    position: relative;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    width: 70%;
+    margin:auto;
+    @media (max-width: 767px) {
+      width: 90%;
+    }
+  }
+  
+  .button {
+    text-transform:uppercase;
+    background-color:transparent;
+    border-radius:0px;
+    margin-top:20px;
+    background-color:#82bb00;
+    padding:15px 30px;
+    border-radius:0px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    @media (max-width: 767px) {
+      padding: 10px 20px;
+    }
+    }
+    .button:hover {
+      cursor: pointer;
+      background-color: #6e9e01;
+    }
+  }
+
+
+  .btn {
+  border: 2px solid black;
+  background-color: white;
+  color: black;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Green */
+.success {
+  border-color: #04AA6D;
+  color: green;
+}
+
+.success:hover {
+  background-color: #04AA6D;
+  color: white;
+}
+
+/* Blue */
+.info {
+  border-color: #2196F3;
+  color: dodgerblue
+}
+
+.info:hover {
+  background: #2196F3;
+  color: white;
+}
+
+/* Orange */
+.warning {
+  border-color: #ff9800;
+  color: orange;
+}
+
+.warning:hover {
+  background: #ff9800;
+  color: white;
+}
+
+/* Red */
+.danger {
+  border-color: #f44336;
+  color: red
+}
+
+.danger:hover {
+  background: #f44336;
+  color: white;
+}
+
+/* Gray */
+.Gray {
+  border-color: rgb(157, 19, 104);
+  color:rgb(157, 19, 104)
+}
+
+.Gray:hover {
+  background: rgb(157, 19, 104);
+  color: white;
+}
+
+  </style>
+
+
+    <div class="container gallery-container">
+        <h1>Photos & Gallery</h1>
+        <p class="page-description text-center">Casterbridge Album</p>
+
+        <div>
+            <a href="gallery.html"><button class="btn success">All</button></a>
+           <a href="gallery(Annuals).html"> <button class="btn info" >Annuals</button></a>
+            <a href="gallery(Sports).html"><button class="btn warning">Sports</button></a>
+            <a href="gallery(Trips).html"><button class="btn danger">Trips</button></a>
+            <a href="gallery(Others).html"><button class="btn Gray">Others</button></a>
+        </div>
+
+        <br><br>
+        
+        <div class="tz-gallery">
+            <div class="row">
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="WhatsApp Image 2022-12-15 at 8.35.49 AM.jpeg">
+                        <img src="WhatsApp Image 2022-12-15 at 8.35.49 AM.jpeg" alt="Bridge">
+                    </a>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- BaguetteBox JS -->
+    <script src="https://cdn.jsdelivr.net/npm/baguettebox.js@1.8.1/dist/baguetteBox.min.js"></script>
+    <script>
+        baguetteBox.run('.tz-gallery');
+    </script>
+
+<footer class="footer-section">
+    <div class="container">
+        <div class="footer-cta pt-5 pb-5">
+            <div class="row">
+                <div class="col-xl-4 col-md-4 mb-30">
+                    <div class="single-cta">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="cta-text">
+                            <h4>Find us</h4>
+                            <span>Chapra,Bihar Nehru chowk</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-4 mb-30">
+                    <div class="single-cta">
+                        <i class="fas fa-phone"></i>
+                        <div class="cta-text">
+                            <h4>Call us</h4>
+                            <span>8757483480</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-4 mb-30">
+                    <div class="single-cta">
+                        <i class="far fa-envelope-open"></i>
+                        <div class="cta-text">
+                            <h4>Mail us</h4>
+                            <span>casterbridge2016@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-content pt-5 pb-5">
+            <div class="row">
+                <div class="col-xl-4 col-lg-4 mb-50">
+                    <div class="footer-widget">
+                        <div class="footer-logo">
+                            <a href="index.html"><img src="school_logo-removebg-preview.png" class="img-fluid" alt="logo"></a>
+                        </div>
+                        <div class="footer-text">
+                            <p>Discover excellence at Casterbridge School, where innovative learning meets personalized attention. Empowering students to thrive academically and socially, we create future leaders in a nurturing and dynamic environment. Join us today!</p>
+                        </div>
+                        <div class="footer-social-icon">
+                            <span>Follow us</span>
+                            <a href="https://www.facebook.com/p/RSCasterbridge-School-100064154192801/"><i class="fab fa-facebook"></i></a>
+                            <a href="https://discord.com/channels/1333484419989897267/1333484420778295368"><i class='fab fa-discord' style='color: white'></i></a>
+                            <a href="https://www.youtube.com/@CasterbridgeSchool-Chapra"><i class="fab fa-youtube" style="color:red"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
+                    <div class="footer-widget">
+                        <div class="footer-widget-heading">
+                            <h3>Useful Links</h3>
+                        </div>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">about</a></li>
+                            <li><a href="#">services</a></li>
+                            <li><a href="#">portfolio</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">About us</a></li>
+                            <li><a href="#">Our Services</a></li>
+                            <li><a href="#">Expert Team</a></li>
+                            <li><a href="#">Contact us</a></li>
+                            <li><a href="#">Latest News</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
+                    <div class="footer-widget">
+                        <div class="footer-widget-heading">
+                            <h3>Subscribe</h3>
+                        </div>
+                        <div class="footer-text mb-25">
+                            <p>Don’t miss to subscribe to our new feeds, kindly fill the form below.</p>
+                        </div>
+                        <div class="subscribe-form">
+                            <form action="#">
+                                <input type="text" placeholder="Email Address">
+                                <button><i class="fab fa-telegram-plane"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 text-center text-lg-left">
+                    <div class="copyright-text">
+                        <p>Copyright &copy; 2025, All Right Reserved <a href="">Arnav-Dattattreya</a></p>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
+                    <div class="footer-menu">
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Terms</a></li>
+                            <li><a href="#">Privacy</a></li>
+                            <li><a href="#">Policy</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </footer>
+  
+<!--footer end-->  
+
+</body>
+</html>

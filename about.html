@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+     <!-- Favicon -->
+     <link href="img/favicon.ico" rel="icon">
+
+     <!-- Google Web Fonts -->
+     <link rel="preconnect" href="https://fonts.gstatic.com">
+     <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Nunito&display=swap" rel="stylesheet">
+ 
+     <!-- Font Awesome -->
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+ 
+     <!-- Flaticon Font -->
+     <link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
+ 
+     <!-- Libraries Stylesheet -->
+     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+     <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+ 
+     <!-- Customized Bootstrap Stylesheet -->
+     <link href="css/style.css" rel="stylesheet">
+     
+    <style>
+        /* Global Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(243, 240, 205);
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navbar Styling */
+        nav {
+            margin: 0;
+            padding: 0;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .navbar {
+            margin-bottom: 0;
+            padding: 0.5rem 1rem;
+        }
+
+        /* Hero Section */
+        .hero-video {
+            margin-top: 0;
+            padding: 0;
+            position: relative;
+        }
+
+        .hero-video video {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .hero-video .callout {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero-video h1 {
+            font-size: 2rem;
+            line-height: 1.5;
+        }
+
+        /* Section Spacing */
+        section {
+            padding: 2rem 1rem;
+        }
+
+        .mission, .facilities, .history {
+            text-align: center;
+        }
+
+        .mission h1, .facilities h1, .history h1 {
+            text-decoration: underline;
+        }
+
+        .mission p, .history p {
+            max-width: 600px;
+            margin: 1rem auto;
+            line-height: 1.6;
+        }
+
+        .facilities .row > div {
+            margin-bottom: 1.5rem;
+        }
+
+        /* Facilities Section */
+        .facilities h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .facilities p {
+            font-size: 1rem;
+        }
+
+        .facilities .d-flex {
+            align-items: center;
+        }
+
+        .facilities .d-flex i {
+            font-size: 2rem;
+            margin-right: 1rem;
+        }
+
+
+        ul {
+    margin: 0px;
+    padding: 0px;
+}
+.footer-section {
+  background: #151414;
+  position: relative;
+}
+.footer-cta {
+  border-bottom: 1px solid #373636;
+}
+.single-cta i {
+  color: #073867;
+  font-size: 30px;
+  float: left;
+  margin-top: 8px;
+}
+.cta-text {
+  padding-left: 15px;
+  display: inline-block;
+}
+.cta-text h4 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+.cta-text span {
+  color: #757575;
+  font-size: 15px;
+}
+.footer-content {
+  position: relative;
+  z-index: 2;
+}
+.footer-pattern img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 330px;
+  background-size: cover;
+  background-position: 100% 100%;
+}
+.footer-logo {
+  margin-bottom: 30px;
+}
+.footer-logo img {
+    max-width: 200px;
+}
+.footer-text p {
+  margin-bottom: 14px;
+  font-size: 14px;
+      color: #7e7e7e;
+  line-height: 28px;
+}
+.footer-social-icon span {
+  color: #fff;
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 20px;
+}
+.footer-social-icon a {
+  color: #fff;
+  font-size: 16px;
+  margin-right: 15px;
+}
+.footer-social-icon i {
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  line-height: 38px;
+  border-radius: 50%;
+}
+.facebook-bg{
+  background: #3B5998;
+}
+.twitter-bg{
+  background: #55ACEE;
+}
+.youtube{
+  background: #fe1e01;
+}
+.footer-widget-heading h3 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  position: relative;
+}
+.footer-widget-heading h3::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -15px;
+  height: 2px;
+  width: 50px;
+  background: #073867;
+}
+.footer-widget ul li {
+  display: inline-block;
+  float: left;
+  width: 50%;
+  margin-bottom: 12px;
+}
+.footer-widget ul li a:hover{
+  color: #073867;
+}
+.footer-widget ul li a {
+  color: #878787;
+  text-transform: capitalize;
+}
+.subscribe-form {
+  position: relative;
+  overflow: hidden;
+}
+.subscribe-form input {
+  width: 100%;
+  padding: 14px 28px;
+  background: #2E2E2E;
+  border: 1px solid #2E2E2E;
+  color: #fff;
+}
+.subscribe-form button {
+    position: absolute;
+    right: 0;
+    background: #073867;
+    padding: 13px 20px;
+    border: 1px solid #073867;
+    top: 0;
+}
+.subscribe-form button i {
+  color: #fff;
+  font-size: 22px;
+  transform: rotate(-6deg);
+}
+.copyright-area{
+  background: #202020;
+  padding: 25px 0;
+}
+.copyright-text p {
+  margin: 0;
+  font-size: 14px;
+  color: #878787;
+}
+.copyright-text p a{
+  color: #073867;
+}
+.footer-menu li {
+  display: inline-block;
+  margin-left: 20px;
+}
+.footer-menu li:hover a{
+  color: #073867;
+}
+.footer-menu li a {
+  font-size: 14px;
+  color: #878787;
+}
+
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="school logo.jpg" alt="School Logo" width="50" height="50" class="me-2">
+                <span>Casterbridge School</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="Index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                   
+                    <li class="nav-item"><a class="nav-link" href="Feedback.html">Feedback</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-video">
+        <div class="video-container">
+            <video src="zebra.mp4" autoplay loop playsinline muted></video>
+            <div class="callout">
+                <h1 style="text-align: center;">Know <br>About Us</h1>
+                <a class="btn btn-primary mt-3" href="#" style="align-items: center;">LEARN MORE</a>
+            </div>
+        </div>
+    </section>
+
+   <!-- Mission Section -->
+<section class="mission">
+    <h1 class="text-primary">Our Mission</h1>
+    <p>
+        Casterbridge school aims to empower all its students to be punctual, humble problem-solvers, 
+        users of modern technology, effective communicators, and lifelong learners in a rapidly changing global community.
+   
+        <button id="startBtn" onclick="startTyping()" style="border: none; color: rgb(67, 67, 169); background-color: transparent;">Read_More →</button>
+
+    </p>
+   
+
+    <p id="demo"></p>
+</section>
+
+<script>
+    var i = 0;
+    var txt = 'At Casterbridge School, we encourage curiosity and creativity, fostering a love for knowledge that extends beyond the classroom. We promote collaboration, respect for diversity, and the development of critical thinking skills. Our commitment is to nurture students who are adaptable and confident in their abilities to tackle challenges. Through a well-rounded education, we aim to cultivate compassionate leaders who contribute positively to society.'; // The text to be typed
+    var speed = 50; // Speed of typing
+    
+    function startTyping() {
+        // Hide the button after it's clicked
+        document.getElementById("startBtn").style.display = "none";
+        
+        // Start the typewriter effect
+        typeWriter();
+    }
+
+    function typeWriter() {
+        if (i < txt.length) {
+            document.getElementById("demo").innerHTML += txt.charAt(i);
+            i++;
+            setTimeout(typeWriter, speed);
+        }
+    }
+</script>
+
+
+    <!-- Facilities Section -->
+    <section class="facilities">
+        <h1 class="text-primary">Facilities</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="d-flex bg-light shadow-sm border rounded p-3">
+                        <i class="flaticon-050-fence text-primary"></i>
+                        <div>
+                            <h4>Effective Management</h4>
+                            <p>Casterbridge School's management fosters excellence, discipline, innovation, teamwork, and student-focused development.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="d-flex bg-light shadow-sm border rounded p-3">
+                        <i class="flaticon-022-drum text-primary"></i>
+                        <div>
+                            <h4>Teachers</h4>
+                            <p>Casterbridge School teachers are dedicated, passionate, supportive, knowledgeable, and committed to student success.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="d-flex bg-light shadow-sm border rounded p-3">
+                        <i class="flaticon-030-crayons text-primary"></i>
+                        <div>
+                            <h4>Education</h4>
+                            <p>"Casterbridge School offers education, fostering critical thinking, creativity,& personal growth through diverse academic opportunities."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<hr>
+    <!-- History Section -->
+    <section class="history">
+        <h1 class="text-primary">Our School History</h1>
+        <p>
+            R.S. Casterbridge School was established in 2016 with the sole purpose of imparting knowledge and shaping 
+            young, energetic individuals ready to take on the world.
+        </p>
+        <p>
+            Founded by the Ramjanm Singh Education and Welfare Trust, the school operates under the trust’s administration 
+            to blend knowledge and experience, producing global citizens.
+        </p>
+        <p>
+            The school's philosophy is to provide career-oriented, student-centered education, fostering critical thinking, 
+            moral values, and skills for excelling in a global community.
+        </p>
+    </section>
+<hr>
+<style>
+    body {
+  font-family: 'Abril Fatface', cursive;
+  font-weight: 700;
+  color:rgb(20, 21, 21);
+}
+</style>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <div class="container-fluid pt-5">
+        <div class="container">
+            <div class="text-center pb-2">
+                <p class="section-title px-5"><span class="px-2"></span></p>
+                <u><h1 class="mb-4">Meets Our Team</h1></u>
+            </div>
+          
+            <div class="row">
+              <div class="col-md-6 col-lg-3 text-center team mb-5">
+                  <div class="position-relative overflow-hidden mb-4" style="border-radius: 100%;">
+                      <img class="img-fluid w-100" src="images.jpg" >
+                  </div>
+                  <h4>Sanjay Sir</h4>
+                  <i>Founder</i>
+              </div>
+              <div class="col-md-6 col-lg-3 text-center team mb-5">
+                  <div class="position-relative overflow-hidden mb-4" style="border-radius: 100%;">
+                      <img class="img-fluid w-100" src="unnamed.jpg" alt="" >
+                  </div>
+                  <h4>Sunil Sir</h4>
+                  <i>Director</i>
+              </div>
+              <div class="col-md-6 col-lg-3 text-center team mb-5">
+                  <div class="position-relative overflow-hidden mb-4" style="border-radius: 100%;">
+                      <img class="img-fluid w-100" src="unnamed (1).jpg" alt="" >
+                  </div>
+                  <h4>Randhir Sir</h4>
+                  <i>principal</i>
+              </div>
+              <div class="col-md-6 col-lg-3 text-center team mb-5">
+                  <div class="position-relative overflow-hidden mb-4" style="border-radius: 100%;">
+                      <img class="img-fluid w-100" src="Chor.png" alt="" >
+                  </div>
+                  <h4 >Ritu Ma'am</h4>
+                  <i>Secretary</i>
+              </div>
+          </div>
+      </div>
+      </div>
+<hr><br><hr>
+
+<!--Principal's Quote-->
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Vollkorn:ital,wght@0,600;1,500&display=swap');
+
+    :root {
+        --type-body: 'Open Sans', Helvetica, Arial, sans-serif;
+        --type-quote: 'Vollkorn', serif;
+        --quote-image-width: 100px; /* Smaller image for mobile */
+        --border-rad: 7px;
+        --accent-color: rgb(0, 0, 0);
+        --quote-bg: hsl(0 0% 97%);
+    }
+
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: var(--type-body);
+        color: hsl(0 0% 15%);
+    }
+
+    .article {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    h1.Chomu {
+        width: max-content;
+        margin: 0 auto 1em;
+        box-shadow: 0 2px 0, 0 4px 0 black, 0 6px 0;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    blockquote {
+        position: relative;
+        margin: 20px 0;
+        padding: 1.2em 1.2em 0.7em calc(1.2em + var(--quote-image-width));
+        font: italic 1rem var(--type-quote);
+        background: var(--quote-bg) no-repeat left / var(--quote-image-width);
+        border-radius: var(--border-rad);
+        border: 2px solid white;
+        box-shadow: 2px 2px 4px hsl(0 0% 0% / 20%);
+        text-indent: 1.2em;
+    }
+
+    blockquote::before {
+        content: "";
+        pointer-events: none;
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: var(--border-rad);
+        box-shadow: inset -2px -2px 1px hsl(0 0% 100%), inset 2px 2px 4px hsl(0 0% 0% / 20%);
+    }
+
+    blockquote::after {
+        content: "❝";
+        position: absolute;
+        z-index: 1;
+        left: 50%;
+        top: -2px;
+        transform: translate(-50%, -50%);
+        width: 1.3em;
+        height: 1.3em;
+        background: white;
+        box-shadow: 0 4px 5px -1px hsla(0 0% 0% / 20%);
+        border-radius: 999px;
+        display: grid;
+        place-content: center;
+        padding-top: 0.5em;
+        color: var(--accent-color);
+        font-size: 24px; /* Smaller for mobile */
+        font-style: normal;
+        text-indent: 0;
+    }
+
+    .blockquote-author-image {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: var(--quote-image-width);
+        height: 100%;
+        object-fit: cover;
+        border-top-left-radius: var(--border-rad);
+        border-bottom-left-radius: var(--border-rad);
+    }
+
+    cite {
+        display: block;
+        margin-top: 20px;
+        text-indent: 0;
+        text-align: center;
+        font: bold 0.8rem var(--type-body);
+        text-transform: uppercase;
+        color: hsl(0, 0%, 0%);
+    }
+
+    @media (min-width: 768px) {
+        :root {
+            --quote-image-width: 140px; /* Larger image for desktop */
+        }
+
+        h1.Chomu {
+            font-size: 1.8rem;
+            margin-bottom: 1.8em;
+        }
+
+        blockquote {
+            margin: 40px 60px;
+            padding: 1.6em 2.4em 0.7em calc(1.4em + var(--quote-image-width));
+            font-size: 1.2rem;
+        }
+
+        blockquote::after {
+            font-size: 36px; /* Larger for desktop */
+        }
+
+        cite {
+            font-size: 0.9rem;
+        }
+    }
+</style>
+
+<article class="article">
+    <h1 class="Chomu">"Words of Wisdom"</h1>
+    <p></p>
+
+    <blockquote>
+        <p>"Education is the light that guides us through darkness, the key that unlocks potential, and the bridge to a brighter future."</p>
+        <cite><span class="cite-last-name">Principal</span></cite>
+        <img src="unnamed (1).jpg" alt="Principal" class="blockquote-author-image">
+    </blockquote>
+
+    <blockquote>
+        <p>"Education is not just about learning facts but about nurturing curiosity, fostering creativity, and building a foundation for lifelong growth and wisdom."</p>
+        <cite><span class="cite-last-name">Director</span></cite>
+        <img src="unnamed.jpg" alt="Director" class="blockquote-author-image">
+    </blockquote>
+
+    <blockquote>
+        <p>"A school is not just a building with classrooms; it is a place where dreams take flight, minds grow, and futures are shaped."</p>
+        <cite><span class="cite-last-name">Founder</span></cite>
+        <img src="images.jpg" alt="Founder" class="blockquote-author-image">
+    </blockquote>
+
+    <blockquote>
+        <p>"Just like a plant needs sunlight to grow, a student needs knowledge and guidance to bloom into their fullest potential."</p>
+        <cite><span class="cite-last-name">Secretary</span></cite>
+        <img src="Chor.png" alt="Secretary" class="blockquote-author-image">
+    </blockquote>
+</article>
+
+<br><hr>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f8f9fa;
+        color: #333;
+    }
+
+    .contact-section {
+        padding: 40px 15px; /* Reduced padding for mobile */
+        background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    }
+
+    .contact-header {
+        text-align: center;
+        margin-bottom: 40px; /* Reduced margin for mobile */
+    }
+
+    .contact-header h2 {
+        font-size: 32px; /* Smaller font size for mobile */
+        color: #2a3d66;
+        font-weight: 700;
+        margin-bottom: 15px; /* Reduced margin for mobile */
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    .contact-header p {
+        color: #555;
+        font-size: 16px; /* Smaller font size for mobile */
+        line-height: 1.6; /* Adjusted line height for mobile */
+        max-width: 100%; /* Full width for mobile */
+        margin: 0 auto;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .contact-info {
+        background-color: #ffffff;
+        padding: 20px; /* Reduced padding for mobile */
+        border-radius: 12px;
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+        margin-bottom: 40px; /* Reduced margin for mobile */
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .contact-info:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
+    }
+
+    .contact-info h3 {
+        font-size: 24px; /* Smaller font size for mobile */
+        color: #004d99;
+        margin-bottom: 15px; /* Reduced margin for mobile */
+        font-weight: 700;
+    }
+
+    .contact-info p {
+        font-size: 16px; /* Smaller font size for mobile */
+        color: #555;
+        margin-bottom: 10px; /* Reduced margin for mobile */
+        line-height: 1.6;
+    }
+
+    .contact-info a {
+        color: #004d99;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .contact-info a:hover {
+        color: #002c6f;
+        text-decoration: underline;
+    }
+
+    .social-links {
+        margin-top: 20px; /* Reduced margin for mobile */
+    }
+
+    .social-links a {
+        margin-right: 15px; /* Reduced margin for mobile */
+        font-size: 18px; /* Smaller font size for mobile */
+        color: #004d99;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .social-links a:hover {
+        color: #002c6f;
+    }
+
+    .map-container {
+        margin-top: 30px; /* Reduced margin for mobile */
+        text-align: center;
+    }
+
+    .map-container iframe {
+        width: 100%;
+        height: 300px; /* Reduced height for mobile */
+        border: none;
+        border-radius: 12px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .map-container p {
+        color: #555;
+        font-size: 14px; /* Smaller font size for mobile */
+        margin-top: 10px; /* Reduced margin for mobile */
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Media Queries for Mobile Devices */
+    @media (max-width: 767.98px) {
+        .contact-section {
+            padding: 20px 10px; /* Further reduced padding for smaller screens */
+        }
+
+        .contact-header h2 {
+            font-size: 28px; /* Even smaller font size for smaller screens */
+        }
+
+        .contact-header p {
+            font-size: 14px; /* Even smaller font size for smaller screens */
+        }
+
+        .contact-info {
+            padding: 15px; /* Further reduced padding for smaller screens */
+        }
+
+        .contact-info h3 {
+            font-size: 20px; /* Even smaller font size for smaller screens */
+        }
+
+        .contact-info p {
+            font-size: 14px; /* Even smaller font size for smaller screens */
+        }
+
+        .social-links a {
+            font-size: 16px; /* Even smaller font size for smaller screens */
+        }
+
+        .map-container iframe {
+            height: 250px; /* Further reduced height for smaller screens */
+        }
+
+        .map-container p {
+            font-size: 12px; /* Even smaller font size for smaller screens */
+        }
+    }
+</style>
+
+<div class="container contact-section">
+    <div class="contact-header">
+        <h2>Contact Us</h2>
+        <p>We’d love to hear from you! Whether you have questions about admissions, programs, or anything else, our team is ready to assist.</p>
+    </div>
+
+    <div class="contact-info">
+        <h3>Address:</h3>
+        <p>Casterbridge School</p>
+        <p>Nehru Chowk, Chapra</p>
+        <p>Bihar, Chapra, Saran, 841301</p>
+
+        <h3>Phone:</h3>
+        <p>General Inquiries: +91 8757483480</p>
+        <p>Admissions: +91 8757837072</p>
+
+        <h3>Email:</h3>
+        <p>General Inquiries: <a href="mailto:casterbridge2016@gmail.com">casterbridge2016@gmail.com</a></p>
+        <p>Admissions: <a href="mailto:casterbridge2016@gmail.com">casterbridge2016@gmail.com</a></p>
+
+        <h3>Office Hours:</h3>
+        <p>Monday to Saturday: 8:00 AM – 4:00 PM</p>
+        <p>Sunday: Closed</p>
+
+        <h3>Follow Us:</h3>
+        <div class="social-links">
+            <a href="https://www.facebook.com/p/RSCasterbridge-School-100064154192801/" target="_blank">Facebook</a>
+            <a href="https://www.youtube.com/@CasterbridgeSchool-Chapra" target="_blank">YouTube</a>
+        </div>
+    </div>
+
+    <div class="map-container">
+       <b><h3 style="text-align: left; color: #3B5998;">Find Us: </h3></b> 
+        <div class="mapouter"><div class="gmap_canvas"><iframe class="gmap_iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=Chapra bihar casterbridge &amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a href="https://sprunkin.com/">Sprunki</a></div><style>.mapouter{position:relative;text-align:right;width:100%;height:300px;}.gmap_canvas {overflow:hidden;background:none!important;width:100%;height:300px;}.gmap_iframe {width:100%!important;height:300px!important;}</style></div>
+        <p>Find us on Google Maps</p>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<!--Footer-->
+<footer class="footer-section">
+    <div class="container">
+        <div class="footer-cta pt-5 pb-5">
+            <div class="row">
+                <div class="col-xl-4 col-md-4 mb-30">
+                    <div class="single-cta">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="cta-text">
+                            <h4>Find us</h4>
+                            <span>Chapra,Bihar Nehru chowk</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-4 mb-30">
+                    <div class="single-cta">
+                        <i class="fas fa-phone"></i>
+                        <div class="cta-text">
+                            <h4>Call us</h4>
+                            <span>8757483480</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-4 mb-30">
+                    <div class="single-cta">
+                        <i class="far fa-envelope-open"></i>
+                        <div class="cta-text">
+                            <h4>Mail us</h4>
+                            <span>casterbridge2016@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-content pt-5 pb-5">
+            <div class="row">
+                <div class="col-xl-4 col-lg-4 mb-50">
+                    <div class="footer-widget">
+                        <div class="footer-logo">
+                            <a href="index.html"><img src="school_logo-removebg-preview.png" class="img-fluid" alt="logo"></a>
+                        </div>
+                        <div class="footer-text">
+                            <p>Discover excellence at Casterbridge School, where innovative learning meets personalized attention. Empowering students to thrive academically and socially, we create future leaders in a nurturing and dynamic environment. Join us today!</p>
+                        </div>
+                        <div class="footer-social-icon">
+                            <span>Follow us</span>
+                            <a href="https://www.facebook.com/p/RSCasterbridge-School-100064154192801/"><i class="fab fa-facebook"></i></a>
+                            <a href="https://discord.com/channels/1333484419989897267/1333484420778295368"><i class='fab fa-discord' style='color: white'></i></a>
+                            <a href="https://www.youtube.com/@CasterbridgeSchool-Chapra"><i class="fab fa-youtube" style="color:red"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
+                    <div class="footer-widget">
+                        <div class="footer-widget-heading">
+                            <h3>Useful Links</h3>
+                        </div>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">about</a></li>
+                            <li><a href="#">services</a></li>
+                            <li><a href="#">portfolio</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">About us</a></li>
+                            <li><a href="#">Our Services</a></li>
+                            <li><a href="#">Expert Team</a></li>
+                            <li><a href="#">Contact us</a></li>
+                            <li><a href="#">Latest News</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
+                    <div class="footer-widget">
+                        <div class="footer-widget-heading">
+                            <h3>Subscribe</h3>
+                        </div>
+                        <div class="footer-text mb-25">
+                            <p>Don’t miss to subscribe to our new feeds, kindly fill the form below.</p>
+                        </div>
+                        <div class="subscribe-form">
+                            <form action="#">
+                                <input type="text" placeholder="Email Address">
+                                <button><i class="fab fa-telegram-plane"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 text-center text-lg-left">
+                    <div class="copyright-text">
+                        <p>Copyright &copy; 2025, All Right Reserved <a href="">Arnav-Dattattreya</a></p>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
+                    <div class="footer-menu">
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Terms</a></li>
+                            <li><a href="#">Privacy</a></li>
+                            <li><a href="#">Policy</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </footer>
+  
+  
+</body>
+</html>

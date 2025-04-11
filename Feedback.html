@@ -1,0 +1,428 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Casterbridge School Feedback Form</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<style>
+    * {
+  padding: 0;
+  margin: 0;
+  color: #1a1f36;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Ubuntu,sans-serif;
+}
+body {
+    min-height: 100%;
+    background-color: #ffffff;
+}
+h1 {
+    letter-spacing: -1px;
+}
+a {
+  color: #5469d4;
+  text-decoration: unset;
+}
+.login-root {
+    background: #fff;
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+}
+.loginbackground {
+    min-height: 692px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 0;
+    overflow: hidden;
+}
+.flex-flex {
+    display: flex;
+}
+.align-center {
+  align-items: center; 
+}
+.center-center {
+  align-items: center;
+  justify-content: center;
+}
+.box-root {
+    box-sizing: border-box;
+}
+.flex-direction--column {
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+.loginbackground-gridContainer {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: [start] 1fr [left-gutter] (86.6px)[16] [left-gutter] 1fr [end];
+    grid-template-columns: [start] 1fr [left-gutter] repeat(16,86.6px) [left-gutter] 1fr [end];
+    -ms-grid-rows: [top] 1fr [top-gutter] (64px)[8] [bottom-gutter] 1fr [bottom];
+    grid-template-rows: [top] 1fr [top-gutter] repeat(8,64px) [bottom-gutter] 1fr [bottom];
+    justify-content: center;
+    margin: 0 -2%;
+    transform: rotate(-12deg) skew(-12deg);
+}
+.box-divider--light-all-2 {
+    box-shadow: inset 0 0 0 2px #e3e8ee;
+}
+.box-background--blue {
+    background-color: #5469d4;
+}
+.box-background--white {
+  background-color: #ffffff; 
+}
+.box-background--blue800 {
+    background-color: #212d63;
+}
+.box-background--gray100 {
+    background-color: #e3e8ee;
+}
+.box-background--cyan200 {
+    background-color: #7fd3ed;
+}
+.padding-top--64 {
+  padding-top: 64px;
+}
+.padding-top--24 {
+  padding-top: 24px;
+}
+.padding-top--48 {
+  padding-top: 48px;
+}
+.padding-bottom--24 {
+  padding-bottom: 24px;
+}
+.padding-horizontal--48 {
+  padding: 48px;
+}
+.padding-bottom--15 {
+  padding-bottom: 15px;
+}
+
+
+.flex-justifyContent--center {
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.formbg {
+    margin: 0px auto;
+    width: 100%;
+    max-width: 448px;
+    background: white;
+    border-radius: 4px;
+    box-shadow: rgba(60, 66, 87, 0.12) 0px 7px 14px 0px, rgba(0, 0, 0, 0.12) 0px 3px 6px 0px;
+}
+span {
+    display: block;
+    font-size: 20px;
+    line-height: 28px;
+    color: #1a1f36;
+}
+label {
+    margin-bottom: 10px;
+}
+.reset-pass a,label {
+    font-size: 14px;
+    font-weight: 600;
+    display: block;
+}
+.reset-pass > a {
+    text-align: right;
+    margin-bottom: 10px;
+}
+.grid--50-50 {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+}
+
+.field input {
+    font-size: 16px;
+    line-height: 28px;
+    padding: 8px 16px;
+    width: 100%;
+    min-height: 44px;
+    border: unset;
+    border-radius: 4px;
+    outline-color: rgb(84 105 212 / 0.5);
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
+                rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
+                rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
+                rgba(60, 66, 87, 0.16) 0px 0px 0px 1px, 
+                rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
+                rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
+                rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+}
+
+input[type="submit"] {
+    background-color: rgb(84, 105, 212);
+    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
+                rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
+                rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, 
+                rgb(84, 105, 212) 0px 0px 0px 1px, 
+                rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
+                rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
+                rgba(60, 66, 87, 0.08) 0px 2px 5px 0px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+}
+.field-checkbox input {
+    width: 20px;
+    height: 15px;
+    margin-right: 5px; 
+    box-shadow: unset;
+    min-height: unset;
+}
+.field-checkbox label {
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+a.ssolink {
+    display: block;
+    text-align: center;
+    font-weight: 600;
+}
+.footer-link span {
+    font-size: 14px;
+    text-align: center;
+}
+.listing a {
+    color: #697386;
+    font-weight: 600;
+    margin: 0 10px;
+}
+
+.animationRightLeft {
+  animation: animationRightLeft 2s ease-in-out infinite;
+}
+.animationLeftRight {
+  animation: animationLeftRight 2s ease-in-out infinite;
+}
+.tans3s {
+  animation: animationLeftRight 3s ease-in-out infinite;
+}
+.tans4s {
+  animation: animationLeftRight 4s ease-in-out infinite;
+}
+
+@keyframes animationLeftRight {
+  0% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(1000px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+} 
+
+@keyframes animationRightLeft {
+  0% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(-1000px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+} 
+</style>
+<body>
+  <div class="login-root">
+    <div class="box-root flex-flex flex-direction--column" style="min-height: 100vh;flex-grow: 1;">
+      <div class="loginbackground box-background--white padding-top--64">
+        <div class="loginbackground-gridContainer">
+          <div class="box-root flex-flex" style="grid-area: top / start / 8 / end;">
+            <div class="box-root" style="background-image: linear-gradient(white 0%, rgb(247, 250, 252) 33%); flex-grow: 1;">
+            </div>
+          </div>
+          <div class="box-root flex-flex" style="grid-area: 4 / 2 / auto / 5;">
+            <div class="box-root box-divider--light-all-2 animationLeftRight tans3s" style="flex-grow: 1;"></div>
+          </div>
+          <div class="box-root flex-flex" style="grid-area: 6 / start / auto / 2;">
+            <div class="box-root box-background--blue800" style="flex-grow: 1;"></div>
+          </div>
+          <div class="box-root flex-flex" style="grid-area: 7 / start / auto / 4;">
+            <div class="box-root box-background--blue animationLeftRight" style="flex-grow: 1;"></div>
+          </div>
+          <div class="box-root flex-flex" style="grid-area: 8 / 4 / auto / 6;">
+            <div class="box-root box-background--gray100 animationLeftRight tans3s" style="flex-grow: 1;"></div>
+          </div>
+          <div class="box-root flex-flex" style="grid-area: 2 / 15 / auto / end;">
+            <div class="box-root box-background--cyan200 animationRightLeft tans4s" style="flex-grow: 1;"></div>
+          </div>
+          <div class="box-root flex-flex" style="grid-area: 3 / 14 / auto / end;">
+            <div class="box-root box-background--blue animationRightLeft" style="flex-grow: 1;"></div>
+          </div>
+          <div class="box-root flex-flex" style="grid-area: 4 / 17 / auto / 20;">
+            <div class="box-root box-background--gray100 animationRightLeft tans4s" style="flex-grow: 1;"></div>
+          </div>
+          <div class="box-root flex-flex" style="grid-area: 5 / 14 / auto / 17;">
+            <div class="box-root box-divider--light-all-2 animationRightLeft tans3s" style="flex-grow: 1;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
+        <div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
+          <h1><a href="http://blog.stackfindover.com/" rel="dofollow">Feedback_Form</a></h1>
+        </div>
+        <div class="formbg-outer">
+          <div class="formbg">
+            <div class="formbg-inner padding-horizontal--48">
+            
+              <form id="feedbackForm" onsubmit="saveFeedback(event)">
+                <div class="field padding-bottom--24">
+                  <label for="name">Student's Name</label>
+                  <input type="name" name="name">
+                </div>
+                <div class="field padding-bottom--24">
+                    <label for="class">Class</label>
+                    <input type="text" name="class" style="width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #ccc; outline-color: rgb(84 105 212 / 0.5);">
+                  </div>
+                  <div class="field padding-bottom--24">
+                    <label for="feedback">Feedback</label>
+                    <textarea name="feedback" rows="4" style="width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #ccc; outline-color: rgb(84 105 212 / 0.5);"></textarea>
+                  </div>
+
+                  <div class="field padding-bottom--24">
+                    <label for="rating">Rating</label>
+                    <div class="star-rating">
+                      <span class="star" data-value="1">&#9733;</span>
+                      <span class="star" data-value="2">&#9733;</span>
+                      <span class="star" data-value="3">&#9733;</span>
+                      <span class="star" data-value="4">&#9733;</span>
+                      <span class="star" data-value="5">&#9733;</span>
+                    </div>
+                    <input type="hidden" name="rating" id="rating" value="0">
+                  </div>
+                  
+                  <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+                      const stars = document.querySelectorAll(".star");
+                      const ratingInput = document.getElementById("rating");
+                      
+                      stars.forEach(star => {
+                        star.addEventListener("click", function () {
+                          let rating = this.getAttribute("data-value");
+                          ratingInput.value = rating;
+                          
+                          stars.forEach(s => s.classList.remove("selected"));
+                          this.classList.add("selected");
+                          this.previousElementSibling?.classList.add("selected");
+                          this.previousElementSibling?.previousElementSibling?.classList.add("selected");
+                          this.previousElementSibling?.previousElementSibling?.previousElementSibling?.classList.add("selected");
+                          this.previousElementSibling?.previousElementSibling?.previousElementSibling?.previousElementSibling?.classList.add("selected");
+                        });
+                      });
+                    });
+                  
+                    function saveFeedback(event) {
+                      event.preventDefault();
+                      let studentName = document.querySelector('input[name="name"]').value;
+                      let studentClass = document.querySelector('input[name="class"]').value;
+                      let feedback = document.querySelector('textarea[name="feedback"]').value;
+                      let rating = document.getElementById("rating").value;
+                      
+                      let feedbackData = JSON.parse(localStorage.getItem("feedbacks")) || [];
+                      feedbackData.push({ name: studentName, class: studentClass, feedback: feedback, rating: rating });
+                      localStorage.setItem("feedbacks", JSON.stringify(feedbackData));
+                      
+                      document.getElementById("feedbackForm").style.display = "none";
+                      let messageDiv = document.createElement("div");
+                      messageDiv.innerHTML = "<h2>Thanks for your feedback!</h2><p>Your feedback is very appreciated.</p>";
+                      messageDiv.style.textAlign = "center";
+                      messageDiv.style.padding = "20px";
+                      messageDiv.style.fontSize = "20px";
+                      document.querySelector(".formbg-inner").appendChild(messageDiv);
+                    }
+                  </script>
+                  
+                  <style>
+                    .star-rating {
+                      display: flex;
+                      gap: 5px;
+                      font-size: 24px;
+                      cursor: pointer;
+                    }
+                    .star {
+                      color: #ccc;
+                      transition: color 0.2s;
+                    }
+                    .star.selected {
+                      color: #f5a623;
+                    }
+                  </style>
+                  
+                  
+                  <div class="field padding-bottom--24">
+                    <input type="submit" name="submit" value="Submit">
+                  </div>
+              </form>
+            </div>
+          </div>
+          <div class="footer-link padding-top--24">
+            <span><a href="index.html">@Back to Home </a></span>
+            <div class="listing padding-top--24 padding-bottom--24 flex-flex center-center">
+              <span><a href="#">© Copright Act 2025 by Arnav Dattattreya</a></span>
+              <script>
+
+function saveFeedback(event) {
+    event.preventDefault(); // Prevents the form from refreshing the page
+
+    // Get form values
+    let studentName = document.querySelector('input[name="name"]').value;
+    let studentClass = document.querySelector('input[name="class"]').value;
+    let feedback = document.querySelector('textarea[name="feedback"]').value;
+    let rating = document.getElementById("rating").value; // Get rating value
+
+    // Ensure fields are not empty
+    if (!studentName || !studentClass || !feedback || rating == 0) {
+        alert("Please fill in all fields and select a rating before submitting.");
+        return;
+    }
+
+    // Retrieve existing feedbacks or initialize an empty array
+    let feedbackData = JSON.parse(localStorage.getItem("feedbacks")) || [];
+    
+    // Add new feedback entry
+    feedbackData.push({ name: studentName, class: studentClass, feedback: feedback, rating: rating });
+
+    // Save updated feedback list to localStorage
+    localStorage.setItem("feedbacks", JSON.stringify(feedbackData));
+
+    // Hide the form and show the thank-you message
+    document.getElementById("feedbackForm").style.display = "none";
+
+    let messageDiv = document.createElement("div");
+    messageDiv.innerHTML = "<h2>Thanks for your feedback!</h2><p>Your feedback is very much appreciated.</p>";
+    messageDiv.style.textAlign = "center";
+    messageDiv.style.padding = "20px";
+    messageDiv.style.fontSize = "20px";
+
+    document.querySelector(".formbg-inner").appendChild(messageDiv);
+}
+
+
+              </script>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

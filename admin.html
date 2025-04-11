@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #007BFF;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .no-feedback {
+            color: red;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .clear-all {
+            background-color: red;
+            color: white;
+        }
+        .clear-single {
+            background-color: orange;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Feedback Responses</h1>
+        <div id="noFeedback" class="no-feedback" style="display: none;">No feedback available.</div>
+        <table id="feedbackTableContainer" style="display: none;">
+            <thead>
+                <tr>
+                    <th>Student Name</th>
+                    <th>Class</th>
+                    <th>Feedback</th>
+                    <th>Rating</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="feedbackTable"></tbody>
+        </table>
+        <div class="buttons">
+            <button class="clear-all" onclick="clearAllFeedback()">Clear All Feedback</button>
+        </div>
+    </div>
+    <script>
+        let feedbackData = JSON.parse(localStorage.getItem("feedbacks")) || [];
+        let feedbackTable = document.getElementById("feedbackTable");
+        let feedbackTableContainer = document.getElementById("feedbackTableContainer");
+        let noFeedbackMessage = document.getElementById("noFeedback");
+
+        function displayFeedback() {
+            feedbackTable.innerHTML = "";
+            if (feedbackData.length > 0) {
+                feedbackTableContainer.style.display = "table";
+                feedbackData.forEach((feedback, index) => {
+                    let row = document.createElement("tr");
+                    row.innerHTML = `<td>${feedback.name}</td><td>${feedback.class}</td><td>${feedback.feedback}</td><td>${feedback.rating}</td>
+                                     <td><button class='clear-single' onclick='clearSingleFeedback(${index})'>Remove</button></td>`;
+                    feedbackTable.appendChild(row);
+                });
+            } else {
+                noFeedbackMessage.style.display = "block";
+                feedbackTableContainer.style.display = "none";
+            }
+        }
+
+        function clearAllFeedback() {
+            localStorage.removeItem("feedbacks");
+            feedbackData = [];
+            displayFeedback();
+        }
+
+        function clearSingleFeedback(index) {
+            feedbackData.splice(index, 1);
+            localStorage.setItem("feedbacks", JSON.stringify(feedbackData));
+            displayFeedback();
+        }
+
+        displayFeedback();
+    </script>
+</body>
+</html>
